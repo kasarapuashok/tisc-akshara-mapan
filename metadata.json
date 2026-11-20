@@ -1,0 +1,6 @@
+{
+  "name": "Akshara Mapan",
+  "description": "AI Reading Assessment for Every Child — Voice-based Telugu and English reading proficiency tool for Telangana government school teachers (Class 1–5).",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

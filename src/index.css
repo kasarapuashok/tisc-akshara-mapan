@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Noto Sans Telugu", system-ui, -apple-system, sans-serif;
+  --font-telugu: "Noto Sans Telugu", "Plus Jakarta Sans", system-ui, sans-serif;
+  --color-ink: #0F172A;
+  --color-muted: #64748B;
+  --color-canvas: #FAFAFF;
+  --color-brand-orange: #FF6B00;
+  --color-brand-gold: #FFB800;
+  --color-brand-violet: #7C3AED;
+  --color-brand-pink: #EC4899;
+  --color-brand-cyan: #06B6D4;
+}
+
+@layer base {
+  html,
+  body {
+    font-family: var(--font-sans);
+    background-color: #FAFAFF;
+    color: #0F172A;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button,
+  a,
+  select,
+  input {
+    outline-color: #FF6B00;
+  }
+}
+
+.font-telugu {
+  font-family: var(--font-telugu);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.76);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 10px 30px -10px rgba(15, 23, 42, 0.06),
+    0 2px 8px -2px rgba(124, 58, 237, 0.04);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  box-shadow:
+    0 14px 40px -8px rgba(15, 23, 42, 0.14),
+    0 4px 12px -2px rgba(124, 58, 237, 0.08);
+}
+
+.primary-gradient {
+  background: linear-gradient(135deg, #FF6B00 0%, #FFB800 100%);
+}
+
+.secondary-gradient {
+  background: linear-gradient(135deg, #7C3AED 0%, #EC4899 100%);
+}
+
+.primary-glow {
+  box-shadow:
+    0 12px 28px -6px rgba(255, 107, 0, 0.42),
+    0 4px 12px -2px rgba(255, 184, 0, 0.28);
+}
+
+.secondary-glow {
+  box-shadow:
+    0 12px 28px -6px rgba(124, 58, 237, 0.38),
+    0 4px 12px -2px rgba(236, 72, 153, 0.25);
+}
+
+.mistake-word {
+  text-decoration: underline wavy #EF4444;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+  background: rgba(239, 68, 68, 0.09);
+  box-shadow: 0 4px 14px -4px rgba(239, 68, 68, 0.28);
+  border-radius: 8px;
+}
+
+@keyframes floatSlowA {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(24px, -18px, 0) scale(1.06);
+  }
+}
+
+@keyframes floatSlowB {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-22px, 20px, 0) scale(1.08);
+  }
+}
+
+@keyframes floatSlowC {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(16px, 24px, 0) scale(0.95);
+  }
+}
+
+.orb-float-a {
+  animation: floatSlowA 16s ease-in-out infinite;
+}
+
+.orb-float-b {
+  animation: floatSlowB 20s ease-in-out infinite;
+}
+
+.orb-float-c {
+  animation: floatSlowC 18s ease-in-out infinite;
+}
+
+/* Hide scrollbars cleanly for horizontal practice carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb-float-a,
+  .orb-float-b,
+  .orb-float-c {
+    animation: none;
+  }
+}
